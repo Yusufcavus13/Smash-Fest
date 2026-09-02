@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868829e1aa9cc475ab513f0f02cab5b3, type: 3}
+  m_Name: SoundBank
+  m_EditorClassIdentifier: Assembly-CSharp::SmashFest.Systems.SoundBank
+  menuMusic: {fileID: 8300000, guid: 2297e10dfe037488a9b14a7d094640b1, type: 3}
+  gameMusic: {fileID: 8300000, guid: 4c4e1862a7f994d9fb871e9b94c14f63, type: 3}
+  buttonTap: {fileID: 8300000, guid: de3d2e2fe10bb4ab6a31e055bf59dd87, type: 3}
+  coin: {fileID: 8300000, guid: bf96fc15bff574b4a9458a8d820013f2, type: 3}
+  ballShoot: {fileID: 8300000, guid: 3146ee5478b4d4ee49be98e33b1b3355, type: 3}
+  levelWin: {fileID: 8300000, guid: 536d7cb24c207438ab1799797a13d7b4, type: 3}
+  levelFail: {fileID: 8300000, guid: 168bd141d340a4afb86289b6a3c252aa, type: 3}
+  materials:
+  - material: 0
+    impact:
+    - {fileID: 8300000, guid: 8d565fcaa49f74e25b253c2c0107aa29, type: 3}
+    shatter:
+    - {fileID: 8300000, guid: 9248f0f17dc184f198065c774c11fdd2, type: 3}
+  - material: 1
+    impact:
+    - {fileID: 8300000, guid: f2336b370912e4be4a4410362c69e302, type: 3}
+    shatter:
+    - {fileID: 8300000, guid: 5abe23653d8ed4759b22cef59a040164, type: 3}
+  - material: 2
+    impact:
+    - {fileID: 8300000, guid: d6100362f9b13405986d65a5d6b7156c, type: 3}
+    shatter:
+    - {fileID: 8300000, guid: 452fe29e9987440439340071ea054237, type: 3}
+  - material: 3
+    impact:
+    - {fileID: 8300000, guid: 2ded0195f914c4e5e9fac37083b5aa08, type: 3}
+    shatter:
+    - {fileID: 8300000, guid: f0e7806e463c14371ab1a8bee97d7c35, type: 3}
+  - material: 4
+    impact:
+    - {fileID: 8300000, guid: f7f7e8267c7df4d6cafe73a6093e5d88, type: 3}
+    shatter:
+    - {fileID: 8300000, guid: fef03fa72d2064d2ba768e83d42f7d4e, type: 3}
+  - material: 5
+    impact:
+    - {fileID: 8300000, guid: a9ecb4957a184472b9bdfb3c1021a301, type: 3}
+    shatter:
+    - {fileID: 8300000, guid: 63082ce8b97a245619e9d6daa14461b6, type: 3}

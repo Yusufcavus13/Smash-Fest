@@ -1,0 +1,319 @@
+{
+  "levelNumber": 21,
+  "ballCount": 29,
+  "platformId": "platform_double",
+  "objects": [
+    {
+      "id": "stone_block",
+      "position": {
+        "x": -2.45,
+        "y": 0.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": -2.45,
+        "y": 1.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": -2.45,
+        "y": 2.525,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": -2.45,
+        "y": 0.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": -2.45,
+        "y": 1.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": -2.45,
+        "y": 2.525,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": -1.4,
+        "y": 0.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": -1.4,
+        "y": 1.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": -1.4,
+        "y": 2.525,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": -1.4,
+        "y": 0.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": -1.4,
+        "y": 1.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": -1.4,
+        "y": 2.525,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": 1.4,
+        "y": 0.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": 1.4,
+        "y": 1.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": 1.4,
+        "y": 2.525,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": 1.4,
+        "y": 0.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": 1.4,
+        "y": 1.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": 1.4,
+        "y": 2.525,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": 2.45,
+        "y": 0.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": 2.45,
+        "y": 1.505,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": 2.45,
+        "y": 2.525,
+        "z": -0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "stone_block",
+      "position": {
+        "x": 2.45,
+        "y": 0.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "ice_block",
+      "position": {
+        "x": 2.45,
+        "y": 1.505,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "id": "glass_jar",
+      "position": {
+        "x": 2.45,
+        "y": 2.525,
+        "z": 0.55
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ]
+}

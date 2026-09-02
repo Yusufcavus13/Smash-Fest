@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7058c134291456a9127ac63299f1af, type: 3}
+  m_Name: PlatformLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::SmashFest.Levels.PlatformLibrary
+  fallbackId: platform_static
+  entries:
+  - id: platform_static
+    prefab: {fileID: 6324233411464868721, guid: 5efb81da69ba94b7eb1660c2382ebdd9, type: 3}
+  - id: platform_double
+    prefab: {fileID: 2212918937385255077, guid: dda26f372912948359dd837b2f416729, type: 3}
+  - id: platform_split
+    prefab: {fileID: 563418104356566740, guid: 5e745d23801f64a5bbf0d093e66dcf7b, type: 3}
+  - id: platform_stairs
+    prefab: {fileID: 5608407689855764347, guid: 42a444f362643418f9c2cc7a45cef2c8, type: 3}
+  - id: platform_tower
+    prefab: {fileID: 2274422811500775522, guid: f6af81b3d5771468b8ac89d2c55e9bf3, type: 3}
