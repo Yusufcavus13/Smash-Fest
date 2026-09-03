@@ -1340,7 +1340,7 @@ MonoBehaviour:
   - {fileID: 3726075461148514954}
   - {fileID: 6195540878563037984}
   materialType: 4
-  maxHealth: 110
+  maxHealth: 26
   impulseThreshold: 3.5
   damagePerImpulse: 0.25
   groundDamagePerImpulse: 3
@@ -1357,9 +1357,14 @@ MonoBehaviour:
   fractureRadius: 1.5
   fractureUpwardModifier: 0.1
   pieceSpin: 2.5
-  despawnDelay: 2.2
+  despawnDelay: 5
   loudImpulse: 12
   hapticImpulseThreshold: 8
+  boundsMinZ: -4.5
+  boundsMaxZ: 4.5
+  boundsMaxX: 6
+  boundsMinY: -3
+  cameraGuardZ: -8
 --- !u!65 &137456159318527871
 BoxCollider:
   m_ObjectHideFlags: 0

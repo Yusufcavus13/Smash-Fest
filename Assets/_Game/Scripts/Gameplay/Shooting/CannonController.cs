@@ -1,3 +1,4 @@
+using SmashFest.Core;
 using SmashFest.Levels;
 using SmashFest.Systems;
 using UnityEngine;
@@ -15,6 +16,10 @@ namespace SmashFest.Gameplay.Shooting
 
         [Tooltip("The barrel pivot that swings to face where the player shoots.")]
         [SerializeField] private Transform aimPivot;
+
+        [Tooltip("Shown only while a level is being played; hidden on Home and the end panels. "
+            + "Defaults to the aim pivot when left empty.")]
+        [SerializeField] private GameObject visualRoot;
 
         [Tooltip("Flash pooled at the muzzle each time the cannon fires. Leave empty to skip.")]
         [SerializeField] private string muzzleFlashId = "fx_muzzle";
@@ -51,8 +56,47 @@ namespace SmashFest.Gameplay.Shooting
             bombArmed = true;
         }
 
+        private void OnEnable()
+        {
+            GameManager.StateChanged += HandleStateChanged;
+
+            // The opening Home is never broadcast (ChangeState skips a no-op move), so read the
+            // live state here to start hidden on the menu.
+            ApplyVisibility(GameManager.Instance != null
+                ? GameManager.Instance.CurrentState
+                : GameState.Home);
+        }
+
+        private void OnDisable()
+        {
+            GameManager.StateChanged -= HandleStateChanged;
+        }
+
+        private void HandleStateChanged(GameState state)
+        {
+            ApplyVisibility(state);
+        }
+
+        private void ApplyVisibility(GameState state)
+        {
+            GameObject target = visualRoot != null
+                ? visualRoot
+                : (aimPivot != null ? aimPivot.gameObject : null);
+
+            if (target != null)
+            {
+                target.SetActive(state == GameState.Playing);
+            }
+        }
+
         private void Update()
         {
+            // Only the live level takes shots; taps on Home or an end panel do nothing.
+            if (GameManager.Instance == null || !GameManager.Instance.IsPlaying)
+            {
+                return;
+            }
+
             Pointer pointer = Pointer.current;
             if (pointer == null)
             {

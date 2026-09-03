@@ -276,6 +276,7 @@ MonoBehaviour:
   body: {fileID: 6511802584612400526}
   bodyCollider: {fileID: 3419197419246437138}
   meshRenderer: {fileID: 4797066940899721349}
+  visualRoot: {fileID: 0}
   fracturedRoot: {fileID: 7101281996551056938}
   fracturePieces:
   - {fileID: 5252289417216869697}
@@ -287,7 +288,7 @@ MonoBehaviour:
   - {fileID: 6744252361361486287}
   - {fileID: 7186494774525333436}
   materialType: 1
-  maxHealth: 15
+  maxHealth: 12
   impulseThreshold: 1.2
   damagePerImpulse: 0.5
   groundDamagePerImpulse: 5
@@ -304,9 +305,14 @@ MonoBehaviour:
   fractureRadius: 1.5
   fractureUpwardModifier: 0.1
   pieceSpin: 2.5
-  despawnDelay: 2.2
+  despawnDelay: 5
   loudImpulse: 12
   hapticImpulseThreshold: 8
+  boundsMinZ: -4.5
+  boundsMaxZ: 4.5
+  boundsMaxX: 6
+  boundsMinY: -3
+  cameraGuardZ: -8
 --- !u!64 &3419197419246437138
 MeshCollider:
   m_ObjectHideFlags: 0

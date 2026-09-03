@@ -74,7 +74,7 @@ namespace SmashFest.Gameplay.Objects
         [SerializeField] protected float fractureRadius = 1.5f;
         [SerializeField] protected float fractureUpwardModifier = 0.1f;
         [SerializeField] protected float pieceSpin = 2.5f;
-        [SerializeField] protected float despawnDelay = 3f;
+        [SerializeField] protected float despawnDelay = 5f;
 
         [Header("Feedback")]
         [Tooltip("Impulse at which an impact plays at full volume.")]
@@ -83,6 +83,18 @@ namespace SmashFest.Gameplay.Objects
         [Tooltip("Only breaks at least this hard are worth a buzz.")]
         [SerializeField] protected float hapticImpulseThreshold = 8f;
 
+
+        [Header("Out of bounds")]
+        [Tooltip("Once knocked past these world limits the block is counted as cleared, then left "
+            + "to keep tumbling for despawnDelay before it fades, so debris lingers a moment.")]
+        [SerializeField] protected float boundsMinZ = -4.5f;
+        [SerializeField] protected float boundsMaxZ = 4.5f;
+        [SerializeField] protected float boundsMaxX = 6f;
+        [SerializeField] protected float boundsMinY = -3f;
+
+        [Tooltip("Hard limit toward the camera: a block this close to the lens is removed at once "
+            + "(no lingering), so nothing can ever fill the screen. Camera sits near z = -12.5.")]
+        [SerializeField] protected float cameraGuardZ = -8f;
 
         protected bool isCleared;
         protected bool isBroken;
@@ -103,6 +115,70 @@ namespace SmashFest.Gameplay.Objects
         protected virtual void OnEnable()
         {
             ResetObject();
+        }
+
+        private void FixedUpdate()
+        {
+            Vector3 p = transform.position;
+
+            // Lens guard runs even after the block is cleared: a piece drifting this close to the
+            // camera is yanked instantly so it can never fill the screen.
+            if (p.z < cameraGuardZ)
+            {
+                HardRemove();
+                return;
+            }
+
+            if (isBroken || isCleared)
+            {
+                return;
+            }
+
+            // Shoved off the table (sideways, back, below, or a way toward the camera): count it
+            // now, but leave it visible to keep tumbling for despawnDelay before it fades.
+            if (p.z < boundsMinZ || p.z > boundsMaxZ
+                || p.x < -boundsMaxX || p.x > boundsMaxX
+                || p.y < boundsMinY)
+            {
+                MarkClearedOutOfBounds();
+            }
+        }
+
+        private void MarkClearedOutOfBounds()
+        {
+            if (!isCleared)
+            {
+                isCleared = true;
+                Cleared?.Invoke(this);
+            }
+
+            // Left visible and still driven by physics; it tumbles off, then despawns on the timer.
+            ScheduleDespawn(true);
+        }
+
+        private void HardRemove()
+        {
+            if (isBroken && !gameObject.activeSelf)
+            {
+                return;
+            }
+
+            meshRenderer.enabled = false;
+            if (visualRoot != null)
+            {
+                visualRoot.SetActive(false);
+            }
+
+            bodyCollider.enabled = false;
+            body.isKinematic = true;
+
+            if (!isCleared)
+            {
+                isCleared = true;
+                Cleared?.Invoke(this);
+            }
+
+            Despawn();
         }
 
         private void OnCollisionEnter(Collision collision)

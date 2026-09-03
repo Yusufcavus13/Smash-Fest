@@ -595,6 +595,7 @@ MonoBehaviour:
   body: {fileID: 1624018581382184561}
   bodyCollider: {fileID: 8150950563979677374}
   meshRenderer: {fileID: 2271251634508925124}
+  visualRoot: {fileID: 0}
   fracturedRoot: {fileID: 34150881711925312}
   fracturePieces:
   - {fileID: 874359180879299933}
@@ -623,9 +624,14 @@ MonoBehaviour:
   fractureRadius: 1.5
   fractureUpwardModifier: 0.1
   pieceSpin: 2.5
-  despawnDelay: 2.2
+  despawnDelay: 5
   loudImpulse: 12
   hapticImpulseThreshold: 8
+  boundsMinZ: -4.5
+  boundsMaxZ: 4.5
+  boundsMaxX: 6
+  boundsMinY: -3
+  cameraGuardZ: -8
 --- !u!136 &8150950563979677374
 CapsuleCollider:
   m_ObjectHideFlags: 0
