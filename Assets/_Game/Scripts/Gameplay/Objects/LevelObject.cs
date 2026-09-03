@@ -24,6 +24,10 @@ namespace SmashFest.Gameplay.Objects
         [SerializeField] protected Rigidbody body;
         [SerializeField] protected Collider bodyCollider;
         [SerializeField] protected MeshRenderer meshRenderer;
+
+        [Tooltip("Optional: an imported model to hide on break instead of meshRenderer. "
+            + "Lets multi-mesh models stand in for the plain body.")]
+        [SerializeField] protected GameObject visualRoot;
         [SerializeField] protected GameObject fracturedRoot;
         [SerializeField] protected Rigidbody[] fracturePieces;
 
@@ -159,7 +163,16 @@ namespace SmashFest.Gameplay.Objects
             body.angularVelocity = Vector3.zero;
 
             bodyCollider.enabled = true;
-            meshRenderer.enabled = true;
+            if (visualRoot != null)
+            {
+                // An imported model stands in for the body; keep the plain mesh hidden.
+                visualRoot.SetActive(true);
+                meshRenderer.enabled = false;
+            }
+            else
+            {
+                meshRenderer.enabled = true;
+            }
 
             for (int i = 0; i < fracturePieces.Length; i++)
             {
@@ -219,6 +232,10 @@ namespace SmashFest.Gameplay.Objects
             Vector3 inheritedVelocity = body.linearVelocity * velocityInheritance;
 
             meshRenderer.enabled = false;
+            if (visualRoot != null)
+            {
+                visualRoot.SetActive(false);
+            }
             bodyCollider.enabled = false;
             body.isKinematic = true;
 

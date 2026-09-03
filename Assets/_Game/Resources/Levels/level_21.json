@@ -33,7 +33,7 @@
       "id": "glass_jar",
       "position": {
         "x": -2.45,
-        "y": 2.525,
+        "y": 2.605,
         "z": -0.55
       },
       "rotation": {
@@ -72,7 +72,7 @@
       "id": "glass_jar",
       "position": {
         "x": -2.45,
-        "y": 2.525,
+        "y": 2.605,
         "z": 0.55
       },
       "rotation": {
@@ -111,7 +111,7 @@
       "id": "glass_jar",
       "position": {
         "x": -1.4,
-        "y": 2.525,
+        "y": 2.605,
         "z": -0.55
       },
       "rotation": {
@@ -150,7 +150,7 @@
       "id": "glass_jar",
       "position": {
         "x": -1.4,
-        "y": 2.525,
+        "y": 2.605,
         "z": 0.55
       },
       "rotation": {
@@ -189,7 +189,7 @@
       "id": "glass_jar",
       "position": {
         "x": 1.4,
-        "y": 2.525,
+        "y": 2.605,
         "z": -0.55
       },
       "rotation": {
@@ -228,7 +228,7 @@
       "id": "glass_jar",
       "position": {
         "x": 1.4,
-        "y": 2.525,
+        "y": 2.605,
         "z": 0.55
       },
       "rotation": {
@@ -267,7 +267,7 @@
       "id": "glass_jar",
       "position": {
         "x": 2.45,
-        "y": 2.525,
+        "y": 2.605,
         "z": -0.55
       },
       "rotation": {
@@ -306,7 +306,7 @@
       "id": "glass_jar",
       "position": {
         "x": 2.45,
-        "y": 2.525,
+        "y": 2.605,
         "z": 0.55
       },
       "rotation": {

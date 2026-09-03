@@ -13,6 +13,12 @@ namespace SmashFest.Gameplay.Shooting
         [SerializeField] private Camera gameCamera;
         [SerializeField] private Transform muzzle;
 
+        [Tooltip("The barrel pivot that swings to face where the player shoots.")]
+        [SerializeField] private Transform aimPivot;
+
+        [Tooltip("Flash pooled at the muzzle each time the cannon fires. Leave empty to skip.")]
+        [SerializeField] private string muzzleFlashId = "fx_muzzle";
+
         [Header("Shooting")]
         [SerializeField] private string ballPoolId = "ball";
         [SerializeField] private float ballSpeed = 25f;
@@ -88,6 +94,7 @@ namespace SmashFest.Gameplay.Shooting
             }
 
             Vector3 aimPoint = GetAimPoint(screenPosition);
+            AimAt(aimPoint);
             Vector3 direction = (aimPoint - muzzle.position).normalized;
 
             GameObject instance = PoolManager.Instance.Spawn(
@@ -100,6 +107,8 @@ namespace SmashFest.Gameplay.Shooting
                 ball.Launch(direction * ballSpeed);
             }
 
+            FlashMuzzle(direction);
+
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.PlayShoot();
@@ -109,6 +118,7 @@ namespace SmashFest.Gameplay.Shooting
         private void FireBomb(Vector2 screenPosition)
         {
             Vector3 aimPoint = GetAimPoint(screenPosition);
+            AimAt(aimPoint);
             Vector3 direction = (aimPoint - muzzle.position).normalized;
 
             GameObject instance = PoolManager.Instance.Spawn(
@@ -121,10 +131,48 @@ namespace SmashFest.Gameplay.Shooting
                 bomb.Launch(direction * bombSpeed, aimPoint);
             }
 
+            FlashMuzzle(direction);
+
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.PlayShoot();
             }
+        }
+
+        /// <summary>
+        /// Swings the barrel so its length points at where the player tapped. The barrel mesh
+        /// runs up its local +Y, so we rotate that axis onto the aim direction; a small floor on
+        /// the pitch keeps it from ever dipping below the horizon and looking broken.
+        /// </summary>
+        private void AimAt(Vector3 aimPoint)
+        {
+            if (aimPivot == null)
+            {
+                return;
+            }
+
+            Vector3 direction = (aimPoint - aimPivot.position).normalized;
+
+            if (direction.y < 0.05f)
+            {
+                direction.y = 0.05f;
+                direction = direction.normalized;
+            }
+
+            aimPivot.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        }
+
+        private void FlashMuzzle(Vector3 direction)
+        {
+            if (string.IsNullOrEmpty(muzzleFlashId) || PoolManager.Instance == null)
+            {
+                return;
+            }
+
+            PoolManager.Instance.Spawn(
+                muzzleFlashId,
+                muzzle.position,
+                Quaternion.LookRotation(direction));
         }
 
         private Vector3 GetAimPoint(Vector2 screenPosition)

@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SmashFest.Gameplay.Shooting.Bomb
   body: {fileID: 5336992245278363521}
   marker: {fileID: 7886031060059173698}
-  radius: 3
+  radius: 2.4
   force: 20
   upwardModifier: 1
   centreDamage: 30
